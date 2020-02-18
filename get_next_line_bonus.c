@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 13:15:46 by thgillai          #+#    #+#             */
-/*   Updated: 2020/02/18 11:17:16 by thgillai         ###   ########.fr       */
+/*   Created: 2020/02/12 14:59:47 by thgillai          #+#    #+#             */
+/*   Updated: 2020/02/18 11:17:30 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-char	*ft_strndup(const char *s1, size_t n) //il fait quoi?
+char	*ft_strndup(const char *s1, size_t n)
 {
 	int		i;
 	char	*str;
@@ -58,7 +58,7 @@ int		ft_line(int fd, char **line, char **str)
 		i++;
 	if (tmp[i] == '\n')
 	{
-		if ((str[fd] = ft_strdup(ft_strchr(tmp, '\n') + 1)) == NULL)//pq strchr?
+		if ((str[fd] = ft_strdup(ft_strchr(tmp, '\n') + 1)) == NULL)
 			return (-1);
 		if (!(*line = ft_strndup(tmp, i)))
 		{
@@ -104,19 +104,19 @@ int		ft_read(int fd, char **line)
 int		get_next_line(int fd, char **line)
 {
 	static char		*str[FOPEN_MAX];
-	int				ret;
+	int				flag;
 
-	if (fd < 0 || fd > FOPEN_MAX || line == NULL || BUFFER_SIZE < 1)
+	if (fd < 0 || line == NULL || BUFFER_SIZE == 0)
 		return (-1);
 	*line = ft_strdup(str[fd]);
-	if ((ret = ft_read(fd, line)) < 0)
+	if ((flag = ft_read(fd, line)) < 0)
 	{
 		free(*line);
 		return (-1);
 	}
 	free(str[fd]);
 	str[fd] = NULL;
-	if (ret == 0 && str[fd] == NULL)
+	if (flag == 0 && str[fd] == NULL)
 		return (0);
 	return (ft_line(fd, line, str));
 }
