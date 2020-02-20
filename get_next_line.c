@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 13:15:46 by thgillai          #+#    #+#             */
-/*   Updated: 2020/02/18 11:17:16 by thgillai         ###   ########.fr       */
+/*   Updated: 2020/02/20 17:42:43 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strndup(const char *s1, size_t n) //il fait quoi?
+char	*get_cpy(const char *s1, size_t n)
 {
 	int		i;
 	char	*str;
@@ -47,7 +47,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int		ft_line(int fd, char **line, char **str)
+int		get_line(int fd, char **line, char **str)
 {
 	char	*tmp;
 	int		i;
@@ -58,9 +58,9 @@ int		ft_line(int fd, char **line, char **str)
 		i++;
 	if (tmp[i] == '\n')
 	{
-		if ((str[fd] = ft_strdup(ft_strchr(tmp, '\n') + 1)) == NULL)//pq strchr?
+		if ((str[fd] = ft_strdup(ft_strchr(tmp, '\n') + 1)) == NULL)
 			return (-1);
-		if (!(*line = ft_strndup(tmp, i)))
+		if (!(*line = get_cpy(tmp, i)))
 		{
 			free(str[fd]);
 			return (-1);
@@ -118,5 +118,5 @@ int		get_next_line(int fd, char **line)
 	str[fd] = NULL;
 	if (ret == 0 && str[fd] == NULL)
 		return (0);
-	return (ft_line(fd, line, str));
+	return (get_line(fd, line, str));
 }
