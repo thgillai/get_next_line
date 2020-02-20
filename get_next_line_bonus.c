@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 14:59:47 by thgillai          #+#    #+#             */
-/*   Updated: 2020/02/18 11:17:30 by thgillai         ###   ########.fr       */
+/*   Updated: 2020/02/20 17:47:52 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char	*ft_strndup(const char *s1, size_t n)
+char	*get_cpy(const char *s1, size_t n)
 {
 	int		i;
 	char	*str;
@@ -47,7 +47,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int		ft_line(int fd, char **line, char **str)
+int		get_line(int fd, char **line, char **str)
 {
 	char	*tmp;
 	int		i;
@@ -60,7 +60,7 @@ int		ft_line(int fd, char **line, char **str)
 	{
 		if ((str[fd] = ft_strdup(ft_strchr(tmp, '\n') + 1)) == NULL)
 			return (-1);
-		if (!(*line = ft_strndup(tmp, i)))
+		if (!(*line = get_cpy(tmp, i)))
 		{
 			free(str[fd]);
 			return (-1);
@@ -104,19 +104,19 @@ int		ft_read(int fd, char **line)
 int		get_next_line(int fd, char **line)
 {
 	static char		*str[FOPEN_MAX];
-	int				flag;
+	int				ret;
 
-	if (fd < 0 || line == NULL || BUFFER_SIZE == 0)
+	if (fd < 0 || fd > FOPEN_MAX || line == NULL || BUFFER_SIZE < 1)
 		return (-1);
 	*line = ft_strdup(str[fd]);
-	if ((flag = ft_read(fd, line)) < 0)
+	if ((ret = ft_read(fd, line)) < 0)
 	{
 		free(*line);
 		return (-1);
 	}
 	free(str[fd]);
 	str[fd] = NULL;
-	if (flag == 0 && str[fd] == NULL)
+	if (ret == 0 && str[fd] == NULL)
 		return (0);
-	return (ft_line(fd, line, str));
+	return (get_line(fd, line, str));
 }
