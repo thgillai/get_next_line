@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 14:40:45 by aglorios          #+#    #+#             */
-/*   Updated: 2020/02/20 17:40:59 by thgillai         ###   ########.fr       */
+/*   Updated: 2020/02/25 11:28:08 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main()
 	}
 	printf("%s\n", line);
 	free(line);
+	printf("Valeur de retour: %d\n", get_next_line(fd, &line));
 	system("leaks a.out");
 	return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 13:18:46 by thgillai          #+#    #+#             */
-/*   Updated: 2020/02/20 17:50:19 by thgillai         ###   ########.fr       */
+/*   Created: 2020/02/25 10:42:52 by thgillai          #+#    #+#             */
+/*   Updated: 2020/02/25 11:00:01 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-int		get_next_line(int fd, char **line);
-int		get_line(int fd, char **line, char **str);
-char	*get_cpy(const char *s1, size_t n);
-char	*ft_strdup(const char *src);
-size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *s, int c);
-void	*ft_calloc(size_t count, size_t size);
-void	ft_bzero(void *s, size_t n);
-int		ft_read(int fd, char **line);
+int	get_next_line(int fd, char **line);
+int	ft_strlen(char *str);
+int	is_line(char *save);
 
 #endif
