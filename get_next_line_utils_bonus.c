@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 10:45:09 by thgillai          #+#    #+#             */
-/*   Updated: 2020/02/25 13:50:34 by thgillai         ###   ########.fr       */
+/*   Created: 2020/02/25 14:21:06 by thgillai          #+#    #+#             */
+/*   Updated: 2020/02/25 14:22:12 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int		ft_strlen(char *str)
 {

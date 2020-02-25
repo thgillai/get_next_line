@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 10:26:18 by thgillai          #+#    #+#             */
-/*   Updated: 2020/02/25 13:53:29 by thgillai         ###   ########.fr       */
+/*   Created: 2020/02/25 14:20:40 by thgillai          #+#    #+#             */
+/*   Updated: 2020/02/25 14:22:35 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*get_line(char *reste)
 {
