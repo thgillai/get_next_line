@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:20:40 by thgillai          #+#    #+#             */
-/*   Updated: 2020/02/25 14:22:35 by thgillai         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:51:17 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*get_line(char *reste)
 	return (line);
 }
 
-static char	*strjoinplus(char *reste, char *buff, int ret)
+static char	*ft_strjoinplus(char *reste, char *buff, int ret)
 {
 	char	*new;
 	int		i;
@@ -104,7 +104,7 @@ static int	get_next_l(int fd, char **line, unsigned int size)
 		return (-1);
 	reste[fd] = free_reste(reste[fd], &ret, 0);
 	if (!reste[fd])
-		return (0);
+		return (-1);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 10:42:52 by thgillai          #+#    #+#             */
-/*   Updated: 2020/02/25 13:49:44 by thgillai         ###   ########.fr       */
+/*   Updated: 2020/02/25 14:42:19 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-int	get_next_line(int fd, char **line);
-int	ft_strlen(char *str);
-int	is_line(char *save);
+int			get_next_line(int fd, char **line);
+int			ft_strlen(char *str);
+int			is_line(char *save);
 
 #endif
