@@ -1,2 +1,3 @@
 # Get_next_line
-Qu'il s'agisse d'un fichier, de l'entrée standard, ou même plus tard d'une connexion réseau, vous aurez toujours besoin de lire du contenu ligne par ligne.
+Get_next_line is a project that allows you to read a file line by line.
+It constitue a little algorithmy challenge 
